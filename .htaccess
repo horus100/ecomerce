@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+Rewriterule ^index.php/(.+)/(.+)/(.+)$ index.php?controlador=$1&accionar=$2&parametro=$3 [QSA,L]
+Rewriterule ^index.php/(.+)/(.+)$ index.php?controlador=$1&accionar=$2 [QSA,L]
+
+Rewriterule ^(.+)/(.+)/(.+)$ index.php?controlador=$1&accionar=$2&parametro=$3 [QSA,L]
+Rewriterule ^(.+)/(.+)$ index.php?controlador=$1&accionar=$2 [QSA,L]
+
+
